@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: micro-13-mssc-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #          place where we are getting information from
+          uri: https://github.com/springframeworkguru/mssc-example-config-repo
+          #          Spring Cloud Config clones repo on start up to temporally folder - takes some time on start up -
+          #          less time on request, because we dont need to make a call to separate repository ( recommended to false )
+          clone-on-start: true
+
+server:
+  port: 8888
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud: DEBUG
+        web: DEBUG
